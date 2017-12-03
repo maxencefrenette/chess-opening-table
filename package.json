@@ -1,0 +1,23 @@
+{
+  "name": "chess-opening-table",
+  "version": "0.0.1",
+  "description": "A computer-generated chess opening table",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxencefrenette/chess-opening-table.git"
+  },
+  "author": "Maxence Frenette",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxencefrenette/chess-opening-table/issues"
+  },
+  "homepage": "https://github.com/maxencefrenette/chess-opening-table#readme",
+  "dependencies": {
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.2"
+  }
+}
