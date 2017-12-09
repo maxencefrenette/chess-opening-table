@@ -1,0 +1,10 @@
+type Position {
+    fen: String
+    whiteWin: Float
+    blackWin: Float
+    children: Int
+}
+
+type Query {
+    getPosition(fen: String): Position
+}
