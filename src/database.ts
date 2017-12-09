@@ -30,6 +30,10 @@ export class Position {
             parseInt(map.children.N!),
         );
     }
+
+    get score(): number {
+        return (1 + this.whiteWin - this.blackWin) / 2;
+    }
 }
 
 export class Database {

@@ -1,26 +1,12 @@
 import { Engine } from 'node-uci';
+import { Color, rand, turn } from './util';
 
-export enum Color {
-    White,
-    Black,
-}
+export { Engine } from 'node-uci';
 
 export enum Result {
     WhiteWin,
     Draw,
     BlackWin,
-}
-
-function rand(min: number, max: number): number {
-    return min + (max - min) * Math.random();
-}
-
-function turn(fen: string): Color {
-    switch (fen.split(' ')[1]) {
-        case 'w': return Color.White;
-        case 'b': return Color.Black;
-        default: throw new Error('Invalid fen');
-    }
 }
 
 function win(color: Color) {
@@ -37,16 +23,14 @@ function lost(color: Color) {
     }
 }
 
-async function spawnEngine() {
+export async function spawnEngine() {
     let engine = new Engine('stockfish');
     await engine.init();
     await engine.isready();
     return engine;
 }
 
-export async function playGame(startPosition: string, nodesPerMove: number) {
-    let w = await spawnEngine();
-    let b = await spawnEngine();
+export async function playGame(startPosition: string, nodesPerMove: number, [w, b]: [Engine, Engine]) {
     let moveHistory = [];
     let drawCounter = 0;
 
