@@ -1,0 +1,18 @@
+{
+    "name": "@chess-opening-table/worker",
+    "version": "0.0.1",
+    "main": "index.ts",
+    "scripts": {
+        "start": "ts-node index.ts"
+    },
+    "dependencies": {
+        "@chess-opening-table/database": "*",
+        "@types/lodash": "^4.14.87",
+        "@types/node": "^8.0.53",
+        "chess.js": "^0.10.2",
+        "lodash": "^4.17.4",
+        "node-uci": "^1.3.0",
+        "ts-node": "^3.3.0",
+        "typescript": "^2.6.2"
+    }
+}

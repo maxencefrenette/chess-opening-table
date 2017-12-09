@@ -1,5 +1,5 @@
 import { Result, playGame, spawnEngine, Engine } from './chess';
-import { Database, Position } from '../shared/database';
+import { Database, Position } from '@chess-opening-table/database';
 import { Chess } from 'chess.js';
 import { maxBy, property, sum } from 'lodash';
 import { Color, turn } from './util';

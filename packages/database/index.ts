@@ -1,6 +1,5 @@
 import { DynamoDB, config } from 'aws-sdk';
 import { PutItemInput, PutItemInputAttributeMap, GetItemInput, AttributeMap } from 'aws-sdk/clients/dynamodb';
-import { resolve } from 'url';
 
 const TABLE_NAME = 'chess-opening-table';
 

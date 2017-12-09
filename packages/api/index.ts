@@ -3,7 +3,7 @@ import * as graphqlHTTP from 'express-graphql';
 import { buildSchema } from 'graphql';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { Database } from '../shared/database';
+import { Database } from '@chess-opening-table/database';
 
 let db = new Database('us-west-2');
 
