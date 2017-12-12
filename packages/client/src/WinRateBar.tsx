@@ -13,7 +13,7 @@ interface SubBarProps {
 }
 
 const SubBar = withProps<SubBarProps>()(styled.div)`
-    width: ${props => props.width * 100}%;
+    width: ${(props) => props.width * 100}%;
     height: 100%;
     display: inline-block;
     flex: 1 1 auto;
@@ -35,13 +35,13 @@ const BlackBar = SubBar.extend`
     background-color: black;
 `;
 
-type Props = {
+interface WinRateBarProps {
     white: number;
     draw: number;
     black: number;
 }
 
-function WinRateBar(props: Props) {
+function WinRateBar(props: WinRateBarProps) {
     return (
         <WinRateBarContainer>
             <WhiteBar width={props.white} />

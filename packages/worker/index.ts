@@ -3,5 +3,5 @@
 
 import { Worker } from './worker';
 
-let worker = new Worker();
+const worker = new Worker();
 worker.start();

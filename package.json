@@ -1,24 +1,27 @@
 {
-  "name": "chess-opening-table",
-  "version": "0.0.1",
-  "description": "A computer-generated chess opening table",
-  "author": "Maxence Frenette",
-  "license": "MIT",
-  "homepage": "https://github.com/maxencefrenette/chess-opening-table#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maxencefrenette/chess-opening-table.git"
-  },
-  "bugs": {
-    "url": "https://github.com/maxencefrenette/chess-opening-table/issues"
-  },
-  "scripts": {
-    "start:api": "cd packages/api && npm run start",
-    "start:client": "cd packages/client && npm run start",
-    "start:worker": "cd packages/worker && npm run start",
-    "bootstrap": "lerna bootstrap"
-  },
-  "devDependencies": {
-    "lerna": "^2.5.1"
-  }
+    "name": "chess-opening-table",
+    "version": "0.0.1",
+    "description": "A computer-generated chess opening table",
+    "author": "Maxence Frenette",
+    "license": "MIT",
+    "homepage": "https://github.com/maxencefrenette/chess-opening-table#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maxencefrenette/chess-opening-table.git"
+    },
+    "bugs": {
+        "url": "https://github.com/maxencefrenette/chess-opening-table/issues"
+    },
+    "scripts": {
+        "start:api": "cd packages/api && npm run start",
+        "start:client": "cd packages/client && npm run start",
+        "start:worker": "cd packages/worker && npm run start",
+        "bootstrap": "lerna bootstrap",
+        "lint": "tslint --project ."
+    },
+    "devDependencies": {
+        "lerna": "^2.5.1",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.2"
+    }
 }

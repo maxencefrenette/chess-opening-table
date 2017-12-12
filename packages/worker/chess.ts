@@ -24,27 +24,27 @@ function lost(color: Color) {
 }
 
 export async function spawnEngine() {
-    let engine = new Engine('stockfish');
+    const engine = new Engine('stockfish');
     await engine.init();
     await engine.isready();
     return engine;
 }
 
 export async function playGame(startPosition: string, nodesPerMove: number, [w, b]: [Engine, Engine]) {
-    let moveHistory = [];
+    const moveHistory = [];
     let drawCounter = 0;
 
-    while(true) {
-        let currentPlayer = turn(startPosition);
-        let currentEngine = currentPlayer == Color.White ? w : b;
+    while (true) {
+        const currentPlayer = turn(startPosition);
+        const currentEngine = currentPlayer === Color.White ? w : b;
 
         await currentEngine.position(startPosition, moveHistory);
-        let result = await currentEngine.go({nodes: nodesPerMove * rand(0.9, 1.1)});
+        const result = await currentEngine.go({nodes: nodesPerMove * rand(0.9, 1.1)});
         moveHistory.push(result.bestmove);
-        
+
         // Check for mate
-        let score = result.info[result.info.length - 1].score;
-        if (score.unit === "mate") {
+        const score = result.info[result.info.length - 1].score;
+        if (score.unit === 'mate') {
             if (score.value > 0) {
                 return win(currentPlayer);
             } else {

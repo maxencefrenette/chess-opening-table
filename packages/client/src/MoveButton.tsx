@@ -15,7 +15,7 @@ const FlexFill = styled.div`
     flex: 1 0 auto;
 `;
 
-type Props = {
+interface MoveButtonProps {
     moveName: string;
     whiteWin: number;
     draw: number;
@@ -23,9 +23,9 @@ type Props = {
     numGames: number;
 }
 
-function MoveButton(props: Props) {
+function MoveButton(props: MoveButtonProps) {
     return (
-        <Button block color='light'>
+        <Button block color="light">
             <FlexContainer>
                 <FlexFixed>{props.moveName}</FlexFixed>
                 <FlexFill />

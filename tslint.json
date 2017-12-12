@@ -1,0 +1,11 @@
+{
+    "extends": ["tslint:recommended"],
+    "rules": {
+        "curly": [true, "ignore-same-line"],
+        "interface-name": false,
+        "member-access": false,
+        "no-console": false,
+        "no-reference": false,
+        "quotemark": [true, "single", "jsx-double"]
+    }
+}

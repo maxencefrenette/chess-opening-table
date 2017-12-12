@@ -1,6 +1,6 @@
-import { ThemedStyledFunction } from 'styled-components'
+import { ThemedStyledFunction } from 'styled-components';
 
 const withProps = <U>() => <P, T, O>(fn: ThemedStyledFunction<P, T, O>) =>
-    fn as ThemedStyledFunction<P & U, T, O & U>
+    fn as ThemedStyledFunction<P & U, T, O & U>;
 
-export { withProps }
+export { withProps };
