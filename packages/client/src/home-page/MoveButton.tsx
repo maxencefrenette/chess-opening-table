@@ -1,7 +1,16 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import styled from 'styled-components';
 import WinRateBar from './WinRateBar';
+
+const PlainLink = styled(Link)`
+    all: unset;
+
+    &:hover {
+        all: unset;
+    }
+`;
 
 const FlexContainer = styled.div`
     display: flex;
@@ -16,24 +25,25 @@ const FlexFill = styled.div`
 `;
 
 interface MoveButtonProps {
-    moveName: string;
+    move: string;
+    fen: string;
     whiteWin: number;
     draw: number;
     blackWin: number;
     numGames: number;
 }
 
-function MoveButton(props: MoveButtonProps) {
-    return (
-        <Button block color="light">
+const MoveButton = (props: MoveButtonProps) => (
+    <Button block color="light">
+        <PlainLink to={'/' + props.fen}>
             <FlexContainer>
-                <FlexFixed>{props.moveName}</FlexFixed>
+                <FlexFixed>{props.move}</FlexFixed>
                 <FlexFill />
                 <FlexFixed>{props.numGames}</FlexFixed>
             </FlexContainer>
             <WinRateBar white={props.whiteWin} draw={props.draw} black={props.blackWin} />
-        </Button>
-    );
-}
+        </PlainLink>
+    </Button>
+);
 
 export default MoveButton;

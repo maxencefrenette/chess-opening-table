@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button } from 'reactstrap';
 import styled from 'styled-components';
-import { withProps } from './util';
+import { withProps } from '../util';
 
 const WinRateBarContainer = styled.div`
     height: 1rem;
@@ -12,7 +12,7 @@ interface SubBarProps {
     width: number;
 }
 
-const SubBar = withProps<SubBarProps>()(styled.div)`
+const SubBar = withProps<SubBarProps>()(styled.div) `
     width: ${(props) => props.width * 100}%;
     height: 100%;
     display: inline-block;
@@ -41,14 +41,12 @@ interface WinRateBarProps {
     black: number;
 }
 
-function WinRateBar(props: WinRateBarProps) {
-    return (
-        <WinRateBarContainer>
-            <WhiteBar width={props.white} />
-            <DrawBar width={props.draw} />
-            <BlackBar width={props.black} />
-        </WinRateBarContainer>
-    );
-}
+const WinRateBar = (props: WinRateBarProps) => (
+    <WinRateBarContainer>
+        <WhiteBar width={props.white} />
+        <DrawBar width={props.draw} />
+        <BlackBar width={props.black} />
+    </WinRateBarContainer>
+);
 
 export default WinRateBar;
