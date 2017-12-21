@@ -1,4 +1,5 @@
 import { Database } from '@chess-opening-table/database';
+import * as cors from 'cors';
 import * as express from 'express';
 import * as graphqlHTTP from 'express-graphql';
 import { readFileSync } from 'fs';
@@ -18,9 +19,11 @@ const root = {
 };
 
 const app = express();
+app.use(cors());
 app.use('/graphql', graphqlHTTP({
     schema,
     rootValue: root,
     graphiql: true,
 }));
 app.listen(4000);
+console.log('API server started on port 4000');
